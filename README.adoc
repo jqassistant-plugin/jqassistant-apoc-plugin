@@ -45,5 +45,5 @@ The plugin can be enabled in a Maven based project by adding it as a dependency 
 
 == Command Line Distribution
 
-Download the JAR file from Maven Central and put it in the `/plugins` folder of the distribution.
+Download the shaded JAR file from Maven Central and put it into the `/plugins` folder of the distribution.
 
