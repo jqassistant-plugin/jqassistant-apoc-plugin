@@ -3,8 +3,6 @@
 
 The project provides the Neo4j APOC procedures and functions as http://jqassistant.org/[jQAssistant] plugin.
 
-NOTE: This plugin is not released yet.
-
 == Prerequisites
 
 - Java 8 or higher
