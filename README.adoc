@@ -3,12 +3,14 @@
 
 The project provides the Neo4j APOC procedures and functions as http://jqassistant.org/[jQAssistant] plugin.
 
-== Prerequisites
+== Installation
+
+=== Prerequisites
 
 - Java 8 or higher
 - jQAssistant 1.8.0 or higher
 
-== Maven
+=== Maven
 
 The plugin can be enabled in a Maven based project by adding it as a dependency to the jQAssistant Maven plugin:
 [source, xml]
@@ -33,7 +35,7 @@ The plugin can be enabled in a Maven based project by adding it as a dependency 
                 <dependency>
                     <groupId>org.jqassistant.contrib.plugin</groupId>
                     <artifactId>jqassistant-apoc-plugin</artifactId>
-                    <version>1.8.0</version>
+                    <version>1.8.1</version>
                 </dependency>
             </dependencies>
         </plugin>
@@ -41,7 +43,26 @@ The plugin can be enabled in a Maven based project by adding it as a dependency 
 </build>
 ----
 
-== Command Line Distribution
+=== Command Line Distribution
 
 Download the shaded JAR file from https://search.maven.org/artifact/org.jqassistant.contrib.plugin/jqassistant-apoc-plugin[Maven Central] and put it into the `/plugins` folder of the distribution.
 
+== Verify
+
+Start the integrated server via Maven (```mvn jqassistant:server```) or CLI (```jqassistant server```) and execute the following query in the Neo4j browser:
+
+----
+CALL apoc.help('text')
+----
+
+The query shall return successfully and return a list of available procedures.
+
+== Changelog
+
+=== 1.8.1
+
+* Fixed jQAssistant startup failure related to JAXB
+
+=== 1.8.0
+
+* Initial Release
