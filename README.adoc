@@ -47,7 +47,7 @@ The plugin can be enabled in a Maven based project by adding it as a dependency 
 
 Download the shaded JAR file from https://search.maven.org/artifact/org.jqassistant.contrib.plugin/jqassistant-apoc-plugin[Maven Central] and put it into the `/plugins` folder of the distribution.
 
-== Verify
+=== Verify Installation
 
 Start the integrated server via Maven (```mvn jqassistant:server```) or CLI (```jqassistant server```) and execute the following query in the Neo4j browser:
 
