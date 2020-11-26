@@ -52,6 +52,7 @@
         <class>apoc.cypher.Cypher</class>
         <class>apoc.cypher.Timeboxed</class>
         <class>apoc.date.Date</class>
+        <class>apoc.diff.Diff</class>
         <class>apoc.es.ElasticSearch</class>
         <class>apoc.example.Examples</class>
         <class>apoc.export.csv.ImportCsv</class>
@@ -60,6 +61,7 @@
         <class>apoc.export.cypher.ExportCypher</class>
         <class>apoc.export.graphml.ExportGraphML</class>
         <class>apoc.export.json.ExportJson</class>
+        <class>apoc.export.json.ImportJson</class>
         <class>apoc.generate.Generate</class>
         <class>apoc.gephi.Gephi</class>
         <class>apoc.get.Get</class>
@@ -102,6 +104,7 @@
         <class>apoc.spatial.Geocode</class>
         <class>apoc.stats.DegreeDistribution</class>
         <class>apoc.text.Phonetic</class>
+        <class>apoc.ttl.TTL</class>
         <class>apoc.trigger.Trigger</class>
         <class>apoc.util.Utils</class>
         <class>apoc.warmup.Warmup</class>
