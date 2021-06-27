@@ -20,7 +20,7 @@ The plugin can be enabled in a Maven based project by adding it as a dependency 
         <plugin>
             <groupId>com.buschmais.jqassistant</groupId>
             <artifactId>jqassistant-maven-plugin</artifactId>
-            <version>1.9.0</version>
+            <version>1.10.0</version>
             <executions>
                 <execution>
                     <id>default-cli</id>
@@ -35,7 +35,7 @@ The plugin can be enabled in a Maven based project by adding it as a dependency 
                 <dependency>
                     <groupId>org.jqassistant.contrib.plugin</groupId>
                     <artifactId>jqassistant-apoc-plugin</artifactId>
-                    <version>1.9.0</version>
+                    <version>1.10.0</version>
                 </dependency>
             </dependencies>
         </plugin>
@@ -58,6 +58,9 @@ CALL apoc.help('text')
 The query shall return successfully and return a list of available procedures.
 
 == Changelog
+
+=== 1.10.0
+* Upgraded to jQAssistant 1.10.0
 
 === 1.9.0
 * Upgraded to jQAssistant 1.9.0 and APOC 3.5.0.15
