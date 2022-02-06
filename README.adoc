@@ -59,6 +59,9 @@ The query shall return successfully and return a list of available procedures.
 
 == Changelog
 
+=== 1.12.0
+* Upgraded to jQAssistant 1.12.0 and APOC 3.5.0.17
+
 === 1.10.0
 * Upgraded to jQAssistant 1.10.0
 
