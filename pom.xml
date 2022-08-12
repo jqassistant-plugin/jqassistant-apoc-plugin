@@ -33,7 +33,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <org.neo4j.procedure_version>3.5.0.17</org.neo4j.procedure_version>
+        <org.neo4j.procedure_version>4.3.0.7</org.neo4j.procedure_version>
     </properties>
 
     <build>
