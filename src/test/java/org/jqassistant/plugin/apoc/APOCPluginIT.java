@@ -1,6 +1,7 @@
-package org.jqassistant.contrib.plugin.apoc;
+package org.jqassistant.plugin.apoc;
 
-import com.buschmais.jqassistant.plugin.common.test.AbstractPluginIT;
+import com.buschmais.jqassistant.core.test.plugin.AbstractPluginIT;
+
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

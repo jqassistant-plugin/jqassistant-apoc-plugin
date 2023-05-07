@@ -1,0 +1,5 @@
+jqassistant:
+  scan:
+    include:
+      files:
+        - ${project.build.directory}/lib

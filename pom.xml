@@ -2,18 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.jqassistant.contrib.common</groupId>
+        <groupId>org.jqassistant.plugin</groupId>
         <artifactId>parent</artifactId>
-        <version>1.12.0-M1</version>
+        <version>2.0.1</version>
     </parent>
 
-    <groupId>org.jqassistant.contrib.plugin</groupId>
     <artifactId>jqassistant-apoc-plugin</artifactId>
-    <version>1.12.0-SNAPSHOT</version>
+    <version>2.0.0-SNAPSHOT</version>
 
     <name>jQAssistant APOC Plugin</name>
     <description>Provides Neo4j APOC procedures and functions for jQAssistant.</description>
-    <url>https://github.com/jqassistant-contrib/jqassistant-apoc-plugin</url>
+    <url>https://github.com/jqassistant-plugin/jqassistant-apoc-plugin</url>
 
     <developers>
         <developer>
@@ -24,27 +23,20 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/jqassistant-contrib/jqassistant-apoc-plugin.git</connection>
-        <developerConnection>scm:git:https://github.com/jqassistant-contrib/jqassistant-apoc-plugin.git
+        <connection>scm:git:https://github.com/jqassistant-plugin/jqassistant-apoc-plugin.git</connection>
+        <developerConnection>scm:git:https://github.com/jqassistant-plugin/jqassistant-apoc-plugin.git
         </developerConnection>
-        <url>https://github.com/jqassistant-contrib/jqassistant-apoc-plugin</url>
+        <url>https://github.com/jqassistant-plugin/jqassistant-apoc-plugin</url>
         <tag>HEAD</tag>
     </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <org.neo4j.procedure_version>3.5.0.17</org.neo4j.procedure_version>
+        <org.neo4j.procedure_version>4.4.0.16</org.neo4j.procedure_version>
     </properties>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <configuration>
-                    <shadedArtifactAttached>true</shadedArtifactAttached>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -70,20 +62,6 @@
                     <outputDirectory>${project.build.directory}/lib</outputDirectory>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>com.buschmais.jqassistant</groupId>
-                <artifactId>jqassistant-maven-plugin</artifactId>
-                <configuration>
-                    <scanProperties>
-                        <xml.file.include>/META-INF/jqassistant-plugin.xml</xml.file.include>
-                    </scanProperties>
-                    <scanIncludes>
-                        <scanInclude>
-                            <path>${project.build.directory}/lib</path>
-                        </scanInclude>
-                    </scanIncludes>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
@@ -91,21 +69,8 @@
         <dependency>
             <groupId>org.neo4j.procedure</groupId>
             <artifactId>apoc</artifactId>
+            <classifier>all</classifier>
             <version>${org.neo4j.procedure_version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>commons-logging</artifactId>
-                    <groupId>commons-logging</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>jackson-databind</artifactId>
-                    <groupId>com.fasterxml.jackson.core</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>asm</artifactId>
-                    <groupId>org.ow2.asm</groupId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <!-- Required by ExtractEmail -->
@@ -117,14 +82,19 @@
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
-            <version>3.17</version>
+            <version>5.1.0</version>
             <scope>runtime</scope>
             <exclusions>
                 <exclusion>
-                    <artifactId>stax-api</artifactId>
-                    <groupId>stax</groupId>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-api</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib</artifactId>
+            <version>1.8.21</version>
         </dependency>
         <!-- Test related dependencies -->
         <dependency>
@@ -148,32 +118,9 @@
             <artifactId>test</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.buschmais.jqassistant.core</groupId>
-            <artifactId>store</artifactId>
-            <type>test-jar</type>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.buschmais.jqassistant.core</groupId>
-            <artifactId>analysis</artifactId>
-            <type>test-jar</type>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>com.buschmais.jqassistant.plugin</groupId>
             <artifactId>common</artifactId>
-            <type>test-jar</type>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.buschmais.jqassistant.neo4jserver</groupId>
-            <artifactId>neo4jv3</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.buschmais.jqassistant.plugin</groupId>
-            <artifactId>java</artifactId>
-            <type>test-jar</type>
+            <version>${com.buschmais.jqassistant.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
