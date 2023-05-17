@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>jqassistant-apoc-plugin</artifactId>
-    <version>2.0.0</version>
+    <version>2.1.0-SNAPSHOT</version>
 
     <name>jQAssistant APOC Plugin</name>
     <description>Provides Neo4j APOC procedures and functions for jQAssistant.</description>
@@ -27,7 +27,7 @@
         <developerConnection>scm:git:https://github.com/jqassistant-plugin/jqassistant-apoc-plugin.git
         </developerConnection>
         <url>https://github.com/jqassistant-plugin/jqassistant-apoc-plugin</url>
-        <tag>2.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <properties>
