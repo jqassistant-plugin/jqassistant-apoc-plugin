@@ -3,12 +3,43 @@
 
 The project provides the Neo4j APOC procedures and functions as http://jqassistant.org/[jQAssistant] plugin.
 
+[NOTE]
+====
+This plugin is deprecated and no longer supported.
+Please migrate to jQAssistant 2.1.0 which allows adding APOC directly as plugin for the embedded store:
+
+.Neo4j v4.x
+[source,yaml]
+----
+jqassistant:
+  store:
+    embedded:
+      neo4j-plugins:
+        - group-id: org.neo4j.procedure
+          artifact-id: apoc
+          version: 4.4.0.25
+----
+
+.Neo4j v5.x
+[source,yaml]
+----
+jqassistant:
+  store:
+    embedded:
+      neo4j-plugins:
+        - group-id: org.neo4j.procedure
+          artifact-id: apoc-core
+          classifier: core
+          version: 5.17.0
+----
+====
+
 == Installation
 
 === Prerequisites
 
 - Java 11 or higher
-- jQAssistant 20.0 or higher
+- jQAssistant 2.0.0 or higher
 
 === Maven
 
